@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_marginTop="65dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/icon"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_email"
+            android:layout_below="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="50dp"
+            app:cardElevation="10dp"
+            >
+
+            <EditText
+                android:drawableLeft="@drawable/email"
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edit_20"
+                android:background="@color/white"
+                android:hint=" EMAIL ID"
+                android:inputType="textEmailAddress"
+                android:padding="13dp"/>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_password"
+            android:layout_below="@+id/main_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="30dp"
+            app:cardElevation="10dp"
+            >
+
+            <EditText
+                android:drawableLeft="@drawable/password"
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edit_20"
+                android:hint=" PASSWORD"
+                android:inputType="textPassword"
+                android:padding="13dp"
+                android:background="@color/white"
+                />
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            style="@style/edit_20"
+            android:background="@drawable/background"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/main_password"
+            android:id="@+id/fp"
+            android:text="Forgot Pasword ?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:text="LOGIN"
+            android:id="@+id/login_button"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fp"
+            style="@style/button_18"
+            />
+
+        <Button
+            android:id="@+id/sign_button"
+            android:text="SIGN UP"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_button"
+            style="@style/button_18"
+            />
+    </RelativeLayout>
+</ScrollView>
