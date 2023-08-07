@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         login= findViewById(R.id.login_button);
         signup= findViewById(R.id.sign_button);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (password.getText().toString().trim().equals("")) {
                     password.setError("Password required");
-                } else if (email.getText().toString().trim().matches(emailPattern)) {
+                } else if (!email.getText().toString().trim().matches(emailPattern)) {
                     email.setError("Invalid Email");
                 } else if (password.getText().toString().trim().length()<8) {
                     password.setError("Minimum 8 charecters required");
