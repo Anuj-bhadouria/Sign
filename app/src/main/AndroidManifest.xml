@@ -13,8 +13,20 @@
         android:theme="@style/Theme.OnlineTicketBooking"
         tools:targetApi="31">
         <activity
+            android:name=".DashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".choseActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

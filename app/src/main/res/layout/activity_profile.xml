@@ -12,67 +12,67 @@
 
         <TextView
             android:textColor="@color/black"
-            android:id="@+id/register"
+            android:id="@+id/profile"
             android:textColorHint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Profile"
             android:textSize="40dp"
             android:layout_centerHorizontal="true"/>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sign_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="50dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="20dp"
-        app:cardElevation="10dp"
-        android:layout_below="@+id/register"
-        >
-
-        <EditText
-            android:textColor="@color/black"
-            android:drawableLeft="@drawable/account"
-            android:id="@+id/name"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pf_name_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/edit_20"
-            android:background="@color/white"
-            android:hint=" Name"
-            android:inputType="textEmailAddress"
-            android:padding="13dp"/>
+            app:cardCornerRadius="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="20dp"
+            app:cardElevation="10dp"
+            android:layout_below="@+id/profile"
+            >
 
-    </androidx.cardview.widget.CardView>
+            <EditText
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/account"
+                android:id="@+id/pf_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edit_20"
+                android:background="@color/white"
+                android:hint=" Name"
+                android:inputType="textEmailAddress"
+                android:padding="13dp"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sign_email_card"
-        android:layout_below="@+id/sign_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="50dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="30dp"
-        app:cardElevation="10dp"
-        >
-
-        <EditText
-            android:drawableLeft="@drawable/email"
-            android:id="@+id/email1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint=" Email ID"
-            android:inputType="textEmailAddress"
-            android:padding="13dp"
-            style="@style/edit_20"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            />
-
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/sign_contact_card"
-            android:layout_below="@+id/sign_email_card"
+            android:id="@+id/pf_email_card"
+            android:layout_below="@+id/pf_name_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="30dp"
+            app:cardElevation="10dp"
+            >
+
+            <EditText
+                android:drawableLeft="@drawable/email"
+                android:id="@+id/pf_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Email ID"
+                android:inputType="textEmailAddress"
+                android:padding="13dp"
+                style="@style/edit_20"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pf_contact_card"
+            android:layout_below="@+id/pf_email_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="50dp"
@@ -82,7 +82,7 @@
 
             <EditText
                 android:drawableLeft="@drawable/phone"
-                android:id="@+id/contact"
+                android:id="@+id/pf_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/edit_20"
@@ -94,72 +94,19 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/sign_password"
-            android:layout_below="@+id/sign_contact_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="50dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="30dp"
-            app:cardElevation="10dp"
-            >
-
-            <EditText
-                android:textColor="@color/black"
-                android:drawableLeft="@drawable/password"
-                android:id="@+id/password1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/edit_20"
-                android:hint=" PASSWORD"
-                android:inputType="textPassword"
-                android:padding="13dp"
-                android:background="@color/white"
-                />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/sign_confirm_password"
-            android:layout_below="@+id/sign_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="50dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="30dp"
-            app:cardElevation="10dp"
-            >
-
-            <EditText
-                android:textColor="@color/black"
-                android:drawableLeft="@drawable/password"
-                android:id="@+id/confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/edit_20"
-                android:hint=" CONFIRM PASSWORD"
-                android:inputType="textPassword"
-                android:padding="13dp"
-                android:background="@color/white"
-                />
-
-        </androidx.cardview.widget.CardView>
-
         <RadioGroup
-            android:id="@+id/sign_gender_card"
+            android:id="@+id/pf_gender_card"
             style="@style/edit_20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sign_confirm_password"
+            android:layout_below="@+id/pf_contact_card"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="-14dp"
+            android:layout_marginTop="14dp"
             android:orientation="horizontal">
 
             <RadioButton
                 android:textColor="@color/black"
-                android:id="@+id/gender_male"
+                android:id="@+id/pf_gender_male"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -169,7 +116,7 @@
             <RadioButton
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
-                android:id="@+id/gender_female"
+                android:id="@+id/pf_gender_female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -181,13 +128,13 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sign_gender_card"
+            android:layout_below="@+id/pf_gender_card"
             android:id="@+id/sign_city"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"/>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/sign_dob_card"
+            android:id="@+id/pf_dob_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/sign_city"
@@ -196,7 +143,7 @@
 
             <EditText
                 android:textColor="@color/black"
-                android:id="@+id/Sign_dob"
+                android:id="@+id/pf_dob"
                 style="@style/edit_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -213,24 +160,34 @@
 
         <Button
             android:background="@drawable/custom_button"
-            android:text="SIGN UP"
-            android:id="@+id/sign_button"
+            android:text="Edit profile"
+            android:id="@+id/pf_edit_button"
             android:layout_marginTop="30dp"
             android:layout_marginHorizontal="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sign_dob_card"
+            android:layout_below="@+id/pf_dob_card"
             style="@style/button_18"
             />
         <Button
+            android:visibility="gone"
+            android:id="@+id/pf_update_profile"
+            style="@style/button_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pf_edit_button"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Update Profile" />
+        <Button
             android:background="@drawable/custom_button"
             android:id="@+id/login_button"
-            android:text="LOGIN"
+            android:text="LOG OUT"
             android:layout_marginTop="15dp"
             android:layout_marginHorizontal="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sign_button"
+            android:layout_below="@+id/pf_update_profile"
             style="@style/button_18"
             />
     </RelativeLayout>

@@ -1,6 +1,9 @@
 package TC.booking.nutz;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,11 +42,18 @@ public class HomeActivity extends AppCompatActivity {
 
     String scity,sgender;
 
+    SQLiteDatabase db;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        db= openOrCreateDatabase("KIRA",MODE_PRIVATE,null);
+        String tableQuery = "CREATE TABLE IF NOT EXISTS USERS(USERID INTEGER PRIMARY KEY AUTOINCREMENT,NAME VARCHAR(100),EMAIL VARCHAR(100),CONTACT INTEGER(10),PASSWORD VARCHAR(20),GENDER VARCHAR(6),CITY VARCHAR(50),DOB VARCHAR(10))";
+        db.execSQL(tableQuery);
 
         signup = findViewById(R.id.sign_button);
         login = findViewById(R.id.login_button);
@@ -130,7 +140,9 @@ public class HomeActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -164,12 +176,24 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (dob.getText().toString().trim().equals("")) {
                     dob.setError("Please Select Date Of Birth");
                 } else {
-                    System.out.println("Signup Successfully\nEmail:" + email.getText().toString() + "\nPassword:" + password.getText().toString());
-                    Snackbar.make(view, "signup succesfully", Snackbar.LENGTH_SHORT);
-                    onBackPressed();
+
+                    String selectQuery = "SELECT * FROM USERS WHERE EMAIL='"+email.getText().toString()+"' OR CONTACT='"+contact.getText().toString()+"'";
+                    Cursor cursor= db.rawQuery(selectQuery,null);
+                    if (cursor.getCount() > 0) {
+                         Toast.makeText(HomeActivity.this, "Email Id/Contact No. Already Exists",Toast.LENGTH_SHORT);
+                    } else {
+                        String insertQuery = "INSERT INTO USERS VALUES(NULL,'" + name.getText().toString() + "','" + email.getText().toString() + "','" + contact.getText().toString() + "','" + password.getText().toString() + "','" + sgender + "','" + scity + "','" + dob.getText().toString() + "')";
+                        db.execSQL(insertQuery);
+
+                        System.out.println("Signup Successfully\nEmail:" + email.getText().toString() + "\nPassword:" + password.getText().toString());
+                        new CommonMethod(HomeActivity.this, "Signup Successfully");
+                        new CommonMethod(view, "Signup Successfully");
+                        onBackPressed();
+
+                    }
+
                 }
             }
         });
-
     }
 }

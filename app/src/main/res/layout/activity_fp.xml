@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".fpActivity">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:background="@drawable/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/alef_bold"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="FORGOT PASSWORD"/>
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="50dp"
+            style="@style/edit_20"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv"
+            android:id="@+id/fp_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Email"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fp_email"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp"
+            android:layout_marginHorizontal="25dp"
+            app:cardElevation="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/fp_tv"
+            >
+
+        <EditText
+
+            android:drawableLeft="@drawable/email"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edit_20"
+            android:background="@color/white"
+            android:hint=" EMAIL ID"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"/>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/fp_email"
+            android:id="@+id/fp_button"
+            android:text="change password"
+            style="@style/button_18"
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
